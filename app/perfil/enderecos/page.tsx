@@ -1,9 +1,9 @@
-import SiteNav from "../components/SiteNav";
+import SiteNav from "@/app/components/SiteNav";
 
 export default function Perfil() {
   return (
     <>
-      <SiteNav current="/perfil" />
+      <SiteNav current="/perfil/enderecos" />
 
       <header>
         <div className="logo">forge<span>craft</span></div>
@@ -13,8 +13,8 @@ export default function Perfil() {
 
         <div className="side">
 
-          <div className="side-item active">Dados pessoais</div>
-          <a href="/perfil/enderecos" className="side-item">Endereços</a>
+          <a href="/perfil" className="side-item">Dados pessoais</a>
+          <a href="/perfil/enderecos" className="side-item active">Endereços</a>
           <a href="/perfil/cartoes" className="side-item">Cartões</a>
           <a href="/perfil/senha" className="side-item">Senha</a>
           <a href="../pedidos" className="side-item">Meus pedidos</a>
@@ -24,47 +24,27 @@ export default function Perfil() {
 
         <div>
 
-          <h1>Meu perfil</h1>
+          <h1>Meus Endereços</h1> 
 
           <div className="card">
 
-            <h3>Dados pessoais</h3>
+            <div className="endereco-row"><h3>Casa</h3><span className="tag">padrão</span></div>
 
-            <div className="form-grid">
-              <div className="form-row"><label>Nome completo</label><input type="text" value="Isabelly Mariane Souza da Silva" /></div>
-              <div className="form-row"><label>CPF</label><input type="text" value="•••.•••.•••-••" disabled /></div>
-              <div className="form-row"><label>E-mail</label><input type="text" value="isabelly@email.com" /></div>
-              <div className="form-row"><label>Telefone</label><input type="text" value="(11) 9••••-••••" /></div>
-            </div>
+            <div className="addr-row"><span>Rua das Palmeiras, 245</span></div>
+            <div className="addr-row"><span>CEP: 01234-567, MOGI DAS CRUZES - SP</span></div>
 
-            <button className="save-btn">Salvar alterações</button>
+            <button className="edit-btn">Realizar Alterações</button>
 
           </div>
 
           <div className="card">
 
-            <h3>Endereços cadastrados</h3>
+            <div className="endereco-row"><h3>Trabalho</h3><span className="tag"> tornar padrão</span></div>
 
-            <div className="addr-row"><span>Casa — Rua das Palmeiras, 245<span className="tag">padrão</span></span><span className="link">editar</span></div>
-            <div className="addr-row"><span>Trabalho — Av. Piraporinha, 1200</span><span className="link">editar</span></div>
+            <div className="addr-row"><span>Rua das Orquideas, 374</span></div>
+            <div className="addr-row"><span>CEP: 89101-121, GUARULHOS - SP</span></div>
 
-          </div>
-
-          <div className="card">
-
-            <h3>Cartões cadastrados</h3>
-
-            <div className="card-row"><span>Nubank •••• 4471<span className="tag">preferencial</span></span><span className="link">remover</span></div>
-            <div className="card-row"><span>Inter •••• 8823</span><span className="link">remover</span></div>
-
-          </div>
-
-          <div className="card danger-zone">
-
-            <h3>Inativar cadastro</h3>
-
-            <p style={{fontSize: "12px", color: "var(--text-secondary)", marginBottom: "14px"}}>Seu histórico é mantido, mas você não poderá fazer login até reativar com o suporte.</p>
-            <button className="danger-btn">Inativar minha conta</button>
+            <span className="edit-address"><button className="edit-btn">Realizar Alterações</button></span>
 
           </div>
 
@@ -88,11 +68,12 @@ export default function Perfil() {
         .form-grid { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
         .form-row label { display:block; font-size:11px; color:var(--text-secondary); margin-bottom:6px; }
         .form-row input { width:100%; background:var(--bg); border:1px solid var(--border); border-radius:8px; padding:10px 12px; color:var(--text-primary); font-size:13px; }
-        .save-btn { background:var(--purple); color:var(--bg); border:none; border-radius:8px; padding:10px 18px; font-size:13px; font-weight:500; margin-top:16px; cursor:pointer; }
-        .addr-row, .card-row { display:flex; justify-content:space-between; align-items:center; padding:12px 0; border-bottom:1px solid var(--border); font-size:13px; }
+        .edit-btn { background:var(--purple); color:var(--bg); border:none; border-radius:8px; padding:10px 18px; font-size:13px; font-weight:500; margin-top:16px; cursor:pointer; }
+        .endereco-row { display: inline-block; justify-content:space-between; align-items:center; padding:12px 0; border-bottom:1px solid var(--border); font-size:13px; inline-size: 14px; font-weight: 500; }
+        .addr-row, .card-row, .endereco-row { display:flex; justify-content:space-between; align-items:center; padding:12px 0; border-bottom:1px solid var(--border); font-size:13px; }
         .addr-row:last-child, .card-row:last-child { border-bottom:none; }
         .tag { font-family:'JetBrains Mono',monospace; font-size:10px; color:var(--mint); background:rgba(0,224,184,0.1); padding:2px 8px; border-radius:6px; margin-left:8px; }
-        .link { color:var(--purple); font-size:12px; cursor:pointer; }
+        .link { display:block; justify-content:space-between; align-items:end; color:var(--purple); font-size:12px; cursor:pointer; }
         .danger-zone { border:1px solid rgba(255,92,108,0.3); }
         .danger-zone h3 { color:var(--red); }
         .danger-btn { background:none; border:1px solid var(--red); color:var(--red); border-radius:8px; padding:10px 16px; font-size:13px; cursor:pointer; }

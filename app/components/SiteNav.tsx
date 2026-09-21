@@ -18,6 +18,8 @@ const CLIENTE_LINKS = [
   { href: "/entrega", label: "Entrega" },
   { href: "/confirmacao", label: "Confirmação" },
   { href: "/perfil", label: "Perfil" },
+  { href: "/perfil/cartoes", label: "Cartões" },
+  { href: "/perfil/enderecos", label: "Endereços" },
   { href: "/pedidos", label: "Pedidos" },
   { href: "/cupons", label: "Cupons" },
   { href: "/chatbot", label: "Chatbot" },

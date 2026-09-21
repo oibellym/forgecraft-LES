@@ -1,9 +1,9 @@
-import SiteNav from "../components/SiteNav";
+import SiteNav from "@/app/components/SiteNav";
 
 export default function Perfil() {
   return (
     <>
-      <SiteNav current="/perfil" />
+      <SiteNav current="/perfil/cartoes" />
 
       <header>
         <div className="logo">forge<span>craft</span></div>
@@ -13,9 +13,9 @@ export default function Perfil() {
 
         <div className="side">
 
-          <div className="side-item active">Dados pessoais</div>
+          <a href="/perfil" className="side-item">Dados pessoais</a>
           <a href="/perfil/enderecos" className="side-item">Endereços</a>
-          <a href="/perfil/cartoes" className="side-item">Cartões</a>
+          <a href="/perfil/cartoes" className="side-item active">Cartões</a>
           <a href="/perfil/senha" className="side-item">Senha</a>
           <a href="../pedidos" className="side-item">Meus pedidos</a>
           <a href="../cupons" className="side-item">Meus cupons</a>
